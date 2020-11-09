@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// import Calendar from 'react-calendar';
+import React, { useState } from 'react';
+// import 'react-calendar/dist/Calendar.css';
+import Calendar from './components/Calendar';
+import stylesheet from './App.css'
 
 function App() {
+  const [value, onChange] = useState(new Date());
+
+  console.log('stylesheet is', stylesheet);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={stylesheet.background}>
+      <Calendar />
     </div>
   );
 }

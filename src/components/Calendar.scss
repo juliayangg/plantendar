@@ -1,0 +1,49 @@
+.react-calendar {
+  border-width: 0px;
+
+  &__tile {
+    padding: 12px;
+    border-radius: 6px;
+
+    &--active, 
+    &--active:enabled:hover, 
+    &--active:enabled:focus, 
+    &--hasActive, 
+    &--hasActive:enabled:hover,
+    &--hasActive:enabled:focus {
+      background: #313639;
+      color: white;
+    }
+  }
+
+  &__navigation {
+    margin-bottom: 0px;
+
+    &__label__labelText {
+      font-weight: bold;
+    }
+
+    &__prev2-button, &__next2-button {
+      display: none;
+    }
+  }
+
+  &__month-view__days__day--weekend {
+    color: #313639;
+  }
+
+  &__month-view {
+    &__weekdays abbr {
+      color: #a4a4a4;
+    }
+
+    &__day abbr {
+      font-weight: bold;
+    }
+  }
+}
+
+abbr {
+  text-decoration: none;
+  text-transform: capitalize;
+}
