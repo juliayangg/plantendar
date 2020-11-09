@@ -1,9 +1,11 @@
 .react-calendar {
   border-width: 0px;
+  width: 480px;
 
   &__tile {
-    padding: 12px;
+    padding: 20px 5px;
     border-radius: 6px;
+    font-size: 21px;
 
     &--active, 
     &--active:enabled:hover, 
@@ -12,7 +14,7 @@
     &--hasActive:enabled:hover,
     &--hasActive:enabled:focus {
       background: #313639;
-      color: white;
+      color: #f8f8ff;
     }
   }
 
@@ -21,6 +23,12 @@
 
     &__label__labelText {
       font-weight: bold;
+      font-size: 21px;
+    }
+
+    &__arrow {
+      font-size: 24px;
+      font-weight: bold;
     }
 
     &__prev2-button, &__next2-button {
@@ -28,17 +36,24 @@
     }
   }
 
-  &__month-view__days__day--weekend {
-    color: #313639;
-  }
-
   &__month-view {
     &__weekdays abbr {
       color: #a4a4a4;
+      font-size: 18px;
     }
 
-    &__day abbr {
-      font-weight: bold;
+    &__days {
+      abbr {
+        font-weight: bold;
+      }
+
+      &__day--weekend {
+        color: #313639;
+      }
+
+      &__day--neighboringMonth {
+        color: #a4a4a4;
+      }
     }
   }
 }
