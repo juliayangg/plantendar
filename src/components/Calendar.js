@@ -11,6 +11,7 @@ function Calendar() {
       onChange={onChange}
       value={value}
       className={stylesheet.calendar}
+      maxDate={new Date()}
     />
   );
 }

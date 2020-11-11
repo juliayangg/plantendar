@@ -1,7 +1,25 @@
 .background {
-  color: red;
+  background-color: #E7F3DF;
+  height: 100vh;
+  max-height: 100%;
 }
 
-.calendar {
-  border-width: 0px;
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 50px;
+  border-radius: 45px;
+  background-color: white;
+
+  display: flex;
+}
+
+.plant-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }

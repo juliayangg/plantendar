@@ -1,17 +1,18 @@
-// import Calendar from 'react-calendar';
 import React, { useState } from 'react';
-// import 'react-calendar/dist/Calendar.css';
 import Calendar from './components/Calendar';
-import stylesheet from './App.css'
+import PlantList from './components/PlantList';
+import './App.css'
 
 function App() {
-  const [value, onChange] = useState(new Date());
-
-  console.log('stylesheet is', stylesheet);
-
   return (
-    <div className={stylesheet.background}>
-      <Calendar />
+    <div className='background'>
+      <div className='container'>
+        <div className='plant-container'>
+          <Calendar />
+          <PlantList />
+        </div>
+      </div>
+      
     </div>
   );
 }
