@@ -1,18 +1,33 @@
 .select-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
 
   background-color: #f7f7f7;
   padding: 20px;
   border-radius: 45px;
   box-sizing: border-box;
+}
 
+.button {
+  color: #8aab8c;
+  font-size: 16px;
+  font-weight: 600;
+  border-width: 0px;
+  background-color: transparent;
 }
 
 .plant-select-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  max-width: 90%;
+  overflow: scroll;
+}
+
+.select-steps {
+  display: flex;
+  width: 10%;
+  justify-content: center;
 }

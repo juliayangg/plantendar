@@ -1,19 +1,41 @@
-.plant {
+.plant-container {
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: 12px;
 }
 
-.plant-img {
-  height: 98px;
-  width: 98px;
-  margin: 5px;
+.plant-img-container {
+  height: 113px;
+  width: 113px;
+  margin: 5px 25px;
   background-color: white; 
   border-radius: 50%;
-  border: 1px solid #EAEAEA;
+  border: 4px solid #EAEAEA;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  // hide radio button for a11y 
+  [type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  img {
+    cursor: pointer;
+    display: flex;
+  }
+}
+
+.watered {
+  background-color: #abd9e9;
+  border: 4px solid #abd9e9;
+}
+
+.selected {
+  border: 4px solid #8aab8c;
 }
