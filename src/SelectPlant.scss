@@ -1,15 +1,18 @@
 .select-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
   background-color: #f7f7f7;
   padding: 20px;
   border-radius: 45px;
+  box-sizing: border-box;
 
+}
+
+.plant-select-container {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  // position: absolute;
-  // bottom: 0; 
-  // left: 0;
-  // width: 100%;
-  // box-sizing: border-box;
+  width: 100%;
 }

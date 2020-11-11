@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import './Plant.scss'
 
-function AddPlant() {
+const addPlant = () => {
+  console.log('clicked add plant');
+}
+
+export default function AddPlant() {
   return (
     <div className='plant'>
-      <div className='plant-img'>
-        <span>+</span>
+      <div className='plant-img' onClick={addPlant}>
+        <img src={process.env.PUBLIC_URL + '/plants/new-plant.png'} alt='plant with question mark' />
       </div>
       New Plant
     </div>
   );
 }
-
-export default AddPlant;

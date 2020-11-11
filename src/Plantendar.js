@@ -9,19 +9,33 @@ class Plantendar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      plants: ['Frankie Jr', 'Pepperoni', 'Polly', 'Valerie', 'Penny']
+      plants: ['Frankie Jr', 'Pepperoni', 'Polly', 'Valerie', 'Penny'],
+      date: new Date(),
     }
   }
 
+  // addPlant = (plant) => {
+  //   this.setState((prevState) => {
+  //     return {
+  //       plants: prevState.plants.concat(plant)
+  //     }
+  //   })
+  // }
+
+  handleChangeDate = (newDate) => {
+    this.setState({
+      date: newDate,
+    })
+  }
+
   render() {
-    console.log(this.state.plants, 'plants are');
     return (
       <div className='background'>
         <div className='container'>
           <div className='content-container'>
             <Header />
             <div className='calendar-container'>
-              <Calendar />
+              <Calendar date={this.state.date} onChangeDate={this.handleChangeDate} />
               <div>
                 <span style={{color:'#8aab8c', fontWeight: '600'}}>On this day</span>
                 <PlantList />

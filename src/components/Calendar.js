@@ -3,18 +3,14 @@ import React, { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import stylesheet from './Calendar.scss'
 
-function Calendar() {
-  const [value, onChange] = useState(new Date());
-
+export default function Calendar({ date, onChangeDate }) {
   return (
     <ReactCalendar
       calendarType='US'
-      onChange={onChange}
-      value={value}
+      onChange={onChangeDate}
+      value={date}
       className={stylesheet.calendar}
-      maxDate={new Date()}
+      maxDate={new Date()} // cannot select past today's date
     />
   );
 }
-
-export default Calendar;

@@ -6,11 +6,17 @@ import AddPlant from './components/AddPlant';
 function SelectPlant({ plants }) {
   return (
     <div className='select-container'>
-      { plants.map((p, index) => {
-        return <Plant key={index} name={p} />
-      })}
-      <AddPlant />
+      <div className='plant-select-container'>
+        { plants.map((p, index) => {
+          return <Plant key={index} name={p} />
+        })}
+        <AddPlant />
+      </div>
+      {/* <div className='select-steps'>
+        prev / next
+      </div> */}
     </div>
+    
   );
 }
 
