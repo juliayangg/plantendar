@@ -1,6 +1,13 @@
 .plant {
-  height: 60px;
-  width: 60px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 12px;
+}
+
+.plant-img {
+  height: 99px;
+  width: 99px;
   margin: 5px;
   background-color: white; 
   border-radius: 50%;

@@ -4,7 +4,10 @@ import './Plant.scss'
 function Plant({ name }) {
   return (
     <div className='plant'>
-      {/* {name} */}
+      <div className='plant-img'>
+        
+      </div>
+      {name}
     </div>
   );
 }

@@ -4,7 +4,10 @@ import './Plant.scss'
 function AddPlant() {
   return (
     <div className='plant'>
-      <span>+</span>
+      <div className='plant-img'>
+        <span>+</span>
+      </div>
+      New Plant
     </div>
   );
 }
