@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './Plant.scss'
 
-function Plant({ name }) {
+function AddPlant() {
   return (
     <div className='plant'>
-      {/* {name} */}
+      <span>+</span>
     </div>
   );
 }
 
-export default Plant;
+export default AddPlant;

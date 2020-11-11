@@ -1,8 +1,7 @@
 .react-calendar {
   font-family: 'Montserrat', sans-serif;
   border-width: 0px;
-  width: 450px;
-  margin-left: 40px;
+  width: 500px;
 
   &__tile {
     padding: 16px 2px;
@@ -15,18 +14,23 @@
       background-color: transparent;
     }
 
+    &--now, &--now:enabled:hover, &--now:enabled:focus {
+      background: #f7f7f7;
+      abbr {
+        color: #202020;
+      }
+    }
+
     &--active, 
     &--active:enabled:hover, 
     &--active:enabled:focus, 
     &--hasActive, 
     &--hasActive:enabled:hover,
     &--hasActive:enabled:focus {
-      background: #313639;
-      color: #f8f8ff;
-    }
-
-    &--now, &--now:enabled:hover, &--now:enabled:focus {
-      background: #8aab8c;
+      background: #8aab8c;// #313639;
+      abbr {
+        color: #f8f8ff;
+      }
     }
   }
 
@@ -73,9 +77,7 @@
         font-weight: bold;
       }
 
-      &__day--weekend {
-        color: #313639;
-
+      &__day {
         &[disabled] {
           color: #101010;
           opacity: 30%;
@@ -93,4 +95,5 @@
 abbr {
   text-decoration: none;
   text-transform: capitalize;
+  color: #202020; // off black for calendar numbers
 }

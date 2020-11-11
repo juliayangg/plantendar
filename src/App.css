@@ -4,22 +4,43 @@
   max-height: 100%;
 }
 
+.welcome {
+  padding: 20px 0 80px 0;
+  font-size: 21px;
+}
+
 .container {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  margin: 50px;
+  margin: 100px;
   border-radius: 45px;
   background-color: white;
 
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0px 4px 20px rgba(0,0,0, 0.05);
 }
 
-.plant-container {
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+}
+
+.calendar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  box-sizing: border-box;
+  /* padding: 30px 0px; */
 }

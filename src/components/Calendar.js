@@ -5,6 +5,7 @@ import stylesheet from './Calendar.scss'
 
 function Calendar() {
   const [value, onChange] = useState(new Date());
+
   return (
     <ReactCalendar
       calendarType='US'

@@ -4,7 +4,7 @@ import Plant from './Plant';
 
 function PlantList() {
   return (
-    <div>plant list</div>
+    <div>plant list / here go the notifications!</div>
   );
 }
 
