@@ -5,6 +5,10 @@ import SelectPlantForm from './SelectPlantForm';
 import Header from './Header';
 import './Plantendar.scss'
 
+function getShortedDate(d){
+  return d.getMonth()+1 + '_' + d.getDate() + '_' + d.getFullYear();
+}
+
 class Plantendar extends React.Component {
   constructor(props){
     super(props);    
@@ -30,16 +34,20 @@ class Plantendar extends React.Component {
   }
 
   handleWaterPlant = (plant) => {
-    const d = this.state.date; 
-    const date = d.getMonth()+1 + '_' + d.getDate() + '_' + d.getFullYear();
-    
+    const date = getShortedDate(this.state.date);
+
     this.setState((prevState) => {
       const updatedCalendar = prevState.calendar; 
+      if (updatedCalendar[date]?.includes(plant.value)) {
+        return;
+      }
+
       if (updatedCalendar[date]){
         updatedCalendar[date] = updatedCalendar[date].concat(plant.value);
       } else {
         updatedCalendar[date] = [plant.value]
       }
+
       return ({
         calendar: updatedCalendar,
       })
@@ -47,13 +55,19 @@ class Plantendar extends React.Component {
   }
 
   render() {
+    const { plants, date, calendar } = this.state; 
+
+    console.log(calendar);
+    const calendarDate = getShortedDate(date);
+    console.log('watered list', calendar[calendarDate]);
+
     return (
       <div className='background'>
         <div className='container'>
           <div className='content-container'>
             <Header />
             <div className='calendar-container'>
-              <Calendar date={this.state.date} onChangeDate={this.handleChangeDate} />
+              <Calendar date={date} onChangeDate={this.handleChangeDate} />
               <div>
                 <span style={{color:'#8aab8c', fontWeight: '600'}}>Upcoming</span>
                 <PlantList />
@@ -62,8 +76,9 @@ class Plantendar extends React.Component {
             </div>
           </div>
           <SelectPlantForm 
-            plants={this.state.plants}
-            date={this.state.date}
+            plants={plants}
+            date={date}
+            wateredList={ calendar[calendarDate] ? calendar[calendarDate] : [] }
             onSubmit={this.handleWaterPlant}
           />
         </div> 

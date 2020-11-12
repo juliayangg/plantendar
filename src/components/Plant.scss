@@ -25,9 +25,15 @@
     height: 0;
   }
 
-  img {
-    cursor: pointer;
+  label {
     display: flex;
+    cursor: pointer;
+    
+    // update cursor if plant if it already been watered
+    // why doesnt this work 
+    // input[type=radio][disabled] + img {
+    //   cursor: not-allowed;
+    // }
   }
 }
 

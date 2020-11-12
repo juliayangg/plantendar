@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './SelectPlantForm.scss'
 import Plant from './components/Plant'; 
 import AddPlant from './components/AddPlant';
+import PropTypes from 'prop-types';
 
 export default class SelectPlantForm extends React.Component {
   constructor(props) {
@@ -20,7 +21,6 @@ export default class SelectPlantForm extends React.Component {
 
   handleChange = event => {
     const selectedPlant = event.target;
-    console.log('selected plant inside handleChange is', selectedPlant.value);
     this.setState({
       selectedPlant,
     })
@@ -31,15 +31,15 @@ export default class SelectPlantForm extends React.Component {
       <form onSubmit={this.handleSubmit} className='select-container'>
         <div className='plant-select-container'>
           { this.props.plants.map((p, index) => {
-            console.log()
             return (<Plant 
               key={index} 
               name={p}
               onChange={this.handleChange} 
               selectedPlant={this.state.selectedPlant}
+              watered={this.props.wateredList.includes(p)}
             />)
           })}
-          <AddPlant />
+          {/* <AddPlant /> */}
         </div>
         <div className='select-steps'>
           {/* with multiple steps: skip / next */}
@@ -48,4 +48,10 @@ export default class SelectPlantForm extends React.Component {
       </form>
     );
   }
+}
+
+SelectPlantForm.propTypes = {
+  plants: PropTypes.array,
+  date: PropTypes.object,
+  wateredList: PropTypes.array,
 }
