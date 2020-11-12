@@ -16,6 +16,9 @@ export default class SelectPlantForm extends React.Component {
   handleSubmit = event => {
     event.preventDefault(); 
     this.props.onSubmit(this.state.selectedPlant);
+    this.setState({
+      selectedPlant: null,
+    })
   }
 
   handleChange = event => {
