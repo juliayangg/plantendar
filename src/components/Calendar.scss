@@ -1,12 +1,12 @@
 .react-calendar {
   font-family: 'Montserrat', sans-serif;
   border-width: 0px;
-  width: 500px;
+  width: 40%;
 
   &__tile {
-    padding: 16px 2px;
+    padding: 10px 2px;
     border-radius: 30px;
-    font-size: 21px;
+    font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 
@@ -27,7 +27,7 @@
     &--hasActive, 
     &--hasActive:enabled:hover,
     &--hasActive:enabled:focus {
-      background: #8aab8c;// #313639;
+      background: #799c7b;// #313639;
       abbr {
         color: #f8f8ff;
       }
@@ -47,9 +47,9 @@
 
     &__label__labelText {
       font-weight: bold;
-      font-size: 21px;
+      font-size: 16px;
       font-family: 'Montserrat', sans-serif;
-      color: #8aab8c;
+      color: #799c7b;
     }
 
     &__arrow {
@@ -64,7 +64,7 @@
 
   &__month-view {
     &__weekdays {
-      padding: 16px 5px;
+      padding: 10px 3px 0 3px;
 
       abbr {
         color: #a4a4a4;

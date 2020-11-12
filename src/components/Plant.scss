@@ -6,9 +6,9 @@
 }
 
 .plant-img-container {
-  height: 113px;
-  width: 113px;
-  margin: 5px 25px;
+  height: 70px;
+  width: 70px;
+  margin: 5px 15px;
   background-color: white; 
   border-radius: 50%;
   border: 4px solid #EAEAEA;
@@ -28,12 +28,41 @@
   label {
     display: flex;
     cursor: pointer;
+    width: 60px;
     
     // update cursor if plant if it already been watered
     // why doesnt this work 
-    // input[type=radio][disabled] + img {
+    // input[type="radio"][disabled] + img {
     //   cursor: not-allowed;
     // }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.plant-info {
+  position: absolute;
+  display: none;
+  margin-top: -80px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0 ,0, 0.05);
+  text-align: left;
+
+  &-name {
+    color: #8aab8c;
+    font-weight: 800;
+    font-size: 14px;
+  }
+}
+
+.plant-container:hover {
+  .plant-info {
+    display:block;
   }
 }
 

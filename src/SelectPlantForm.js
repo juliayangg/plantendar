@@ -15,7 +15,6 @@ export default class SelectPlantForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault(); 
-    console.log('handle submit of form');
     this.props.onSubmit(this.state.selectedPlant);
   }
 
@@ -27,16 +26,22 @@ export default class SelectPlantForm extends React.Component {
   }
 
   render () { 
+    // should we uncheck the radio select when we select a new date? 
+    
+    const { plants, date, wateredList, lastWaterDate } = this.props; 
+    const { selectedPlant } = this.state; 
+
     return (
       <form onSubmit={this.handleSubmit} className='select-container'>
         <div className='plant-select-container'>
-          { this.props.plants.map((p, index) => {
+          { plants.map((p, index) => {
             return (<Plant 
               key={index} 
               name={p}
               onChange={this.handleChange} 
-              selectedPlant={this.state.selectedPlant}
-              watered={this.props.wateredList.includes(p)}
+              selectedPlant={selectedPlant}
+              watered={wateredList.includes(p)}
+              lastWaterDate={lastWaterDate[p] ? lastWaterDate[p] : null }
             />)
           })}
           {/* <AddPlant /> */}
@@ -54,4 +59,5 @@ SelectPlantForm.propTypes = {
   plants: PropTypes.array,
   date: PropTypes.object,
   wateredList: PropTypes.array,
+  lastWaterDate: PropTypes.object,
 }
