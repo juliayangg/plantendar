@@ -14,7 +14,7 @@ class Plantendar extends React.Component {
     super(props);    
     this.state = {
       plants: ['Frankie Jr', 'Pepperoni', 'Polly', 'Giraffe', 'Tallboi', 'Valerie', 'Penny'],
-      lastWaterDate: {}, //potentially use this to store ALL the last times the plant was watered?
+      waterDateDetails: {}, //potentially use this to store ALL the last times the plant was watered?
       // todo: lastFertilizerDate? 
       date: new Date(),
       calendar: {},
@@ -37,9 +37,8 @@ class Plantendar extends React.Component {
 
   // this modifies 'calendar[date]' to add plant 
   // and updates plantWaterDate[plant] with the current date
-  handleWaterPlant = (plantInput) => {
+  handleWaterPlant = (plant) => {
     const date = getShortedDate(this.state.date);
-    const plant = plantInput.value;
 
     this.setState((prevState) => {
       const updatedCalendar = prevState.calendar; 
@@ -53,18 +52,22 @@ class Plantendar extends React.Component {
         updatedCalendar[date] = [plant]
       }
 
-      const lastWaterDate = prevState.lastWaterDate; 
-      lastWaterDate[plant] = date; 
+      const waterDateDetails = prevState.waterDateDetails; 
+      if (waterDateDetails[plant]){
+        waterDateDetails[plant] = waterDateDetails[plant].concat(date);
+      } else {
+        waterDateDetails[plant] = [date]; 
+      }
       
       return ({
         calendar: updatedCalendar,
-        lastWaterDate: lastWaterDate,
+        waterDateDetails: waterDateDetails,
       })
     })
   }
 
   render() {
-    const { plants, date, lastWaterDate, calendar } = this.state; 
+    const { plants, date, waterDateDetails, calendar } = this.state; 
     const calendarDate = getShortedDate(date);
 
     return (
@@ -85,7 +88,7 @@ class Plantendar extends React.Component {
           </div>
           <SelectPlantForm 
             plants={plants}
-            lastWaterDate={lastWaterDate}
+            waterDateDetails={waterDateDetails}
             date={date}
             wateredList={ calendar[calendarDate] ? calendar[calendarDate] : [] }
             onSubmit={this.handleWaterPlant}
