@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Calendar from './components/Calendar';
-import PlantList from './components/PlantList';
+import NotificationList from './NotificationList';
 import SelectPlantForm from './SelectPlantForm';
 import Header from './Header';
 import './Plantendar.scss'
@@ -82,7 +82,7 @@ class Plantendar extends React.Component {
               />
               <div>
                 <span style={{color:'#799c7b', fontWeight: '600'}}>Upcoming</span>
-                <PlantList />
+                <NotificationList />
               </div>
             </div>
           </div>
