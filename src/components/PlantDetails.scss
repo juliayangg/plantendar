@@ -5,14 +5,34 @@
   justify-content: space-around;
 }
 
+.dropdown-select {
+  select {
+    border-radius: 100px; 
+    border: 1px solid #EAEAEA;
+    height: 30px;
+    width: 150px;
+    color: #348388;
+    font-weight: bold;
+    padding: 0px 10px 0px 10px;
+  }
+    
+}
+
 .detail {
   padding: 10px;
 
   label {
     display: block;
     font-weight: 600;
-    color: #3B9363;
+    color: #348388;
     padding-bottom: 10px;
+  }
+
+  input[type='text'] {
+    border-radius: 100px; 
+    border: 1px solid #EAEAEA;
+    height: 30px;
+    width: 300px;
   }
 
   input[type='text'] {

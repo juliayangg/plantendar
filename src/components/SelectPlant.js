@@ -24,7 +24,7 @@ export default class SelectPlant extends React.Component {
             waterDateDetails={waterDateDetails[p] ? waterDateDetails[p] : null }
           />)
         })}
-        {/* <AddPlant /> */}
+        {/* { <AddPlant /> } */}
       </div>
     );
   }
